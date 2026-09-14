@@ -1,0 +1,29 @@
+@use "../../../styles/variables" as *;
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 50;
+  display: flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-full;
+  background-color: $color-whatsapp;
+  color: $color-whatsapp-foreground;
+  transition: transform 0.15s ease;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__icon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}

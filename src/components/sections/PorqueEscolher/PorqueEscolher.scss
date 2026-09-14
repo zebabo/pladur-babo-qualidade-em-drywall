@@ -1,0 +1,66 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.porque {
+  background-color: $color-steel;
+  padding-block: $section-padding-y;
+
+  &__inner {
+    @include container;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    margin-top: 0.75rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $color-steel-foreground;
+
+    @include respond(sm) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__grid {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.5rem;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__card {
+    border-radius: $radius-xl;
+    border: 1px solid color-mix(in oklab, $color-steel-foreground 15%, transparent);
+    padding: 1.5rem;
+  }
+
+  &__numero {
+    font-family: $font-display;
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: $color-primary;
+  }
+
+  &__card-titulo {
+    margin-top: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-steel-foreground;
+  }
+
+  &__card-texto {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: color-mix(in oklab, $color-steel-foreground 75%, transparent);
+  }
+}
