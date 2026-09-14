@@ -1,16 +1,5 @@
+import { CIDADES_ATUACAO } from "@/lib/areas";
 import "./ZonaAtuacao.scss";
-
-const CIDADES = [
-  "Penafiel",
-  "Paredes",
-  "Porto",
-  "Lousada",
-  "Paços de Ferreira",
-  "Marco de Canaveses",
-  "Amarante",
-  "Gondomar",
-  "Valongo",
-];
 
 export function ZonaAtuacao() {
   return (
@@ -24,7 +13,7 @@ export function ZonaAtuacao() {
             longe, fale connosco à mesma — normalmente arranjamos maneira.
           </p>
           <ul className="zona__lista">
-            {CIDADES.map((c) => (
+            {CIDADES_ATUACAO.map((c) => (
               <li key={c} className="zona__cidade">
                 {c}
               </li>
