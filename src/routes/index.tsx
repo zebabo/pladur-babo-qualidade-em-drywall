@@ -8,6 +8,7 @@ import { Sobre } from "@/components/sections/Sobre/Sobre";
 import { Servicos } from "@/components/sections/Servicos/Servicos";
 import { Galeria } from "@/components/sections/Galeria/Galeria";
 import { PorqueEscolher } from "@/components/sections/PorqueEscolher/PorqueEscolher";
+import { Testemunhos } from "@/components/sections/Testemunhos/Testemunhos";
 import { ZonaAtuacao } from "@/components/sections/ZonaAtuacao/ZonaAtuacao";
 import { Contactos } from "@/components/sections/Contactos/Contactos";
 
@@ -40,6 +41,7 @@ function HomePage() {
       <Servicos />
       <Galeria />
       <PorqueEscolher />
+      <Testemunhos />
       <ZonaAtuacao />
       <Contactos />
       <Footer />
