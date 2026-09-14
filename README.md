@@ -44,23 +44,22 @@ TOM: Direto, de confiança, sem jargão técnico excessivo — a pensar em clien
 
 Usa imagens placeholder de boa qualidade relacionadas com construção/pladur onde ainda não tenho fotos reais.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/29d790aa-ea17-4169-8d55-d9392033d6d7).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+This project uses [Bun](https://bun.sh) and [TanStack Start](https://tanstack.com/start).
 
 ```sh
 git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+cd pladur-babo-qualidade-em-drywall
+bun install
+bun run dev
+```
+
+Other scripts:
+
+```sh
+bun run build     # production build
+bun run preview   # preview the production build
+bun run lint      # lint
+bun run format    # format with prettier
 ```
