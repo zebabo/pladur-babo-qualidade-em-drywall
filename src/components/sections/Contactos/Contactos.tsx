@@ -1,8 +1,11 @@
 import { useState } from "react";
+import clsx from "clsx";
 import { TELEFONE, TELEFONE_LINK, WHATSAPP } from "@/lib/contacts";
+import { useReveal } from "@/hooks/useReveal";
 import "./Contactos.scss";
 
 export function Contactos() {
+  const { ref, visible } = useReveal<HTMLElement>();
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +18,11 @@ export function Contactos() {
   }
 
   return (
-    <section id="contactos" className="contactos">
+    <section
+      id="contactos"
+      ref={ref}
+      className={clsx("contactos", "reveal", visible && "is-visible")}
+    >
       <div className="contactos__inner">
         <p className="contactos__label">Contactos</p>
         <h2 className="contactos__title">Peça o seu orçamento</h2>

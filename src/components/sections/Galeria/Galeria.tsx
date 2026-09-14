@@ -1,9 +1,11 @@
+import clsx from "clsx";
 import tectoImg from "@/assets/trabalho-tecto.jpg";
 import divisoriaImg from "@/assets/trabalho-divisoria.jpg";
 import isolamentoImg from "@/assets/trabalho-isolamento.jpg";
 import pinturaImg from "@/assets/trabalho-pintura.jpg";
 import sobreImg from "@/assets/sobre.jpg";
 import heroImg from "@/assets/hero.jpg";
+import { useReveal } from "@/hooks/useReveal";
 import "./Galeria.scss";
 
 const GALERIA = [
@@ -40,8 +42,10 @@ const GALERIA = [
 ];
 
 export function Galeria() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="galeria" className="galeria">
+    <section id="galeria" ref={ref} className={clsx("galeria", "reveal", visible && "is-visible")}>
       <p className="galeria__label">Trabalhos</p>
       <h2 className="galeria__title">Alguns dos nossos trabalhos</h2>
       <p className="galeria__text">

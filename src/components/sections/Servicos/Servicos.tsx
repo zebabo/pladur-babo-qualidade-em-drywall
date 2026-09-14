@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { useReveal } from "@/hooks/useReveal";
 import "./Servicos.scss";
 
 const SERVICOS = [
@@ -34,8 +36,14 @@ const SERVICOS = [
 ];
 
 export function Servicos() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="servicos" className="servicos">
+    <section
+      id="servicos"
+      ref={ref}
+      className={clsx("servicos", "reveal", visible && "is-visible")}
+    >
       <div className="servicos__inner">
         <p className="servicos__label">Serviços</p>
         <h2 className="servicos__title">O que fazemos</h2>

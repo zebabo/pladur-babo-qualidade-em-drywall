@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { useReveal } from "@/hooks/useReveal";
 import "./PorqueEscolher.scss";
 
 const FORTES = [
@@ -20,8 +22,10 @@ const FORTES = [
 ];
 
 export function PorqueEscolher() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section className="porque">
+    <section ref={ref} className={clsx("porque", "reveal", visible && "is-visible")}>
       <div className="porque__inner">
         <p className="porque__label">Porquê escolher-nos</p>
         <h2 className="porque__title">Motivos para nos confiar a sua obra</h2>
