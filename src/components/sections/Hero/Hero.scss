@@ -26,8 +26,17 @@
     }
   }
 
+  &__label,
+  &__title,
+  &__text,
+  &__actions {
+    opacity: 0;
+    animation: hero-rise 0.7s ease forwards;
+  }
+
   &__label {
     @include section-label;
+    animation-delay: 0.05s;
   }
 
   &__title {
@@ -37,6 +46,7 @@
     font-weight: 800;
     line-height: 1.25;
     color: $color-steel-foreground;
+    animation-delay: 0.15s;
 
     @include respond(sm) {
       font-size: 3.75rem;
@@ -48,6 +58,7 @@
     max-width: 36rem;
     font-size: 1rem;
     color: color-mix(in oklab, $color-steel-foreground 80%, transparent);
+    animation-delay: 0.25s;
 
     @include respond(sm) {
       font-size: 1.125rem;
@@ -59,6 +70,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    animation-delay: 0.35s;
 
     @include respond(sm) {
       flex-direction: row;
@@ -93,5 +105,27 @@
         background-color: color-mix(in oklab, $color-steel-foreground 10%, transparent);
       }
     }
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__label,
+  .hero__title,
+  .hero__text,
+  .hero__actions {
+    opacity: 1;
+    animation: none;
   }
 }

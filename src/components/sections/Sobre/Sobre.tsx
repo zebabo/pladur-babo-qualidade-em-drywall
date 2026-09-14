@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import sobreImg from "@/assets/sobre.jpg";
+import { useReveal } from "@/hooks/useReveal";
 import "./Sobre.scss";
 
 const VALORES = [
@@ -8,8 +10,10 @@ const VALORES = [
 ];
 
 export function Sobre() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="sobre" className="sobre">
+    <section id="sobre" ref={ref} className={clsx("sobre", "reveal", visible && "is-visible")}>
       <div className="sobre__grid">
         <div>
           <p className="sobre__label">Sobre nós</p>

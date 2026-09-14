@@ -1,9 +1,13 @@
+import clsx from "clsx";
 import { CIDADES_ATUACAO } from "@/lib/areas";
+import { useReveal } from "@/hooks/useReveal";
 import "./ZonaAtuacao.scss";
 
 export function ZonaAtuacao() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section className="zona">
+    <section ref={ref} className={clsx("zona", "reveal", visible && "is-visible")}>
       <div className="zona__grid">
         <div>
           <p className="zona__label">Zona de atuação</p>
