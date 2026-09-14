@@ -1,0 +1,28 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.site-footer {
+  border-top: 1px solid $color-border;
+  padding-block: 2rem;
+
+  &__inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: $color-muted-foreground;
+
+    @include respond(sm) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-weight: 700;
+    color: $color-foreground;
+  }
+}

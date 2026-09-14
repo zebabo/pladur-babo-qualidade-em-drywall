@@ -1,0 +1,63 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.zona {
+  @include container;
+  padding-block: $section-padding-y;
+
+  &__grid {
+    display: grid;
+    gap: 2.5rem;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    margin-top: 0.75rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+
+    @include respond(sm) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+    color: $color-muted-foreground;
+  }
+
+  &__lista {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__cidade {
+    border-radius: $radius-full;
+    border: 1px solid $color-border;
+    background-color: $color-card;
+    padding: 0.375rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__mapa {
+    overflow: hidden;
+    border-radius: $radius-xl;
+    border: 1px solid $color-border;
+  }
+
+  &__mapa-iframe {
+    height: 20rem;
+    width: 100%;
+    border: 0;
+  }
+}

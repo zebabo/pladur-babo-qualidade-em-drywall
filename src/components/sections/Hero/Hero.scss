@@ -1,0 +1,97 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: $color-steel;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+  }
+
+  &__content {
+    position: relative;
+    @include container;
+    padding-block: 6rem;
+
+    @include respond(sm) {
+      padding-block: 8rem;
+    }
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    margin-top: 1rem;
+    max-width: 48rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: $color-steel-foreground;
+
+    @include respond(sm) {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1.25rem;
+    max-width: 36rem;
+    font-size: 1rem;
+    color: color-mix(in oklab, $color-steel-foreground 80%, transparent);
+
+    @include respond(sm) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    @include respond(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__cta {
+    border-radius: $radius-md;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 700;
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease;
+
+    &--primary {
+      background-color: $color-primary;
+      color: $color-primary-foreground;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    &--outline {
+      border: 1px solid color-mix(in oklab, $color-steel-foreground 30%, transparent);
+      color: $color-steel-foreground;
+
+      &:hover {
+        background-color: color-mix(in oklab, $color-steel-foreground 10%, transparent);
+      }
+    }
+  }
+}

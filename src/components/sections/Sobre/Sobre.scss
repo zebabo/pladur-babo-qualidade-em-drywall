@@ -1,0 +1,75 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.sobre {
+  @include container;
+  padding-block: $section-padding-y;
+
+  &__grid {
+    display: grid;
+    align-items: center;
+    gap: 2.5rem;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    margin-top: 0.75rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+
+    @include respond(sm) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1.25rem;
+    color: $color-muted-foreground;
+
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  &__valores {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__valor {
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+    background-color: $color-card;
+    padding: 1rem;
+  }
+
+  &__valor-titulo {
+    font-family: $font-display;
+    font-weight: 700;
+  }
+
+  &__valor-texto {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: $color-muted-foreground;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: $radius-xl;
+    object-fit: cover;
+    @include shadow-lg;
+  }
+}

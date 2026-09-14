@@ -1,0 +1,73 @@
+@use "../styles/variables" as *;
+
+.state-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+
+  &__inner {
+    max-width: 28rem;
+    text-align: center;
+  }
+
+  &__code {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: $color-foreground;
+  }
+
+  &__title {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-foreground;
+  }
+
+  &__text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: $color-muted-foreground;
+  }
+
+  &__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+.state-page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-primary-foreground;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $color-input;
+    background-color: $color-background;
+    color: $color-foreground;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
